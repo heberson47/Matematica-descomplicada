@@ -1,6 +1,7 @@
 import math
 import requests
 from tkinter import *
+import os
 
 
 
@@ -8,6 +9,14 @@ from tkinter import *
 janela = Tk()
 janela.title('Calculadora tangente')
 
+img_fundo = PhotoImage(file='fundo.png')
+img_botao = PhotoImage(file='botao.png')
+
+label_fundo = Label(janela, image=img_fundo)
+label_fundo.pack()
+
+#label_botao = Label(janela, image=img_botao)
+#label_botao.pack()
 
 def bt_click():
     print('bt_click')
@@ -22,18 +31,16 @@ def bt_click():
         lb['text']= 'Valores informados inválidos.'
 
 ed1=Entry(janela)
-ed1.place(x=100, y=100)
-#ed2=Entry(janela)
-#ed2.place(x=100, y=130)
+ed1.place(width=210,height=31,x=95, y=104)
 
-bt=Button(janela, text='Resultado', width=20, command=bt_click)
-bt.place (x=100, y= 150)
+bt=Button(janela, bd=0, image=img_botao, command=bt_click)
+bt.place (width=92,height=32,x=155, y=163)
 
 lb = Label(janela, text='')
-lb.place(x=100,y=200)
+lb.place(width=179, height=26, x=110,y=218)
 
-texto1 = Label(janela, text='Digite seu angulo em graus')
-texto1.place (x=90, y=60)
+#texto1 = Label(janela, text='Digite seu angulo em graus')
+#texto1.place (x=90, y=60)
 
 janela.geometry('400x300+200+200')
 janela.mainloop()
